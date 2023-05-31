@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: 'Noto Sans';
+            font-weight: 700;
+            margin: 0px;
+            color: #EDF0F4;
+            scroll-snap-type: y proximity;
+        }
+
+        .name {
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .name ul {
+            list-style-type: none;
+            max-width: 75rem;
+            margin: auto;
+            overflow: hidden;
+            top: 0;
+        }
+
+        .name ul li {
+            float: left;
+        }
+
+        .name ul li div {
+            padding: 16px;
+            height: 64px;
+        }
+
+        .name ul li div a {
+            font-weight: 900;
+            font-size: 32px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .name ul li div a:hover {
+            background-color: #111;
+        }
+
+        .name ul .active {
+            background-color: #4CAF50;
+        }
+
+        .home {
+            background-color: #1B2331;
+            min-height: 100vh;
+            scroll-snap-align: start;
+        }
+
+        .home img {
+            max-height: 32vh;
+            max-width: 32vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -16vh;
+        }
+
+        .hello {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 128px;
+            font-weight: 900;
+            text-shadow: 0px 0px 50vh #EDF0F4;
+        }
+
+        @keyframes moveImage1 {
+            0% {
+                transform: rotate(0deg) translateX(32vh) rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(90deg) translateX(32vh) rotate(-90deg);
+            }
+
+            50% {
+                transform: rotate(180deg) translateX(32vh) rotate(-180deg);
+            }
+
+            75% {
+                transform: rotate(270deg) translateX(32vh) rotate(-270deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(32vh) rotate(-360deg);
+            }
+        }
+
+        @keyframes moveImage2 {
+            0% {
+                transform: rotate(90deg) translateX(32vh) rotate(-90deg);
+            }
+
+            25% {
+                transform: rotate(180deg) translateX(32vh) rotate(-180deg);
+            }
+
+            50% {
+                transform: rotate(270deg) translateX(32vh) rotate(-270deg);
+            }
+
+            75% {
+                transform: rotate(360deg) translateX(32vh) rotate(-360deg);
+            }
+
+            100% {
+                transform: rotate(450deg) translateX(32vh) rotate(-450deg);
+            }
+        }
+
+        @keyframes moveImage3 {
+            0% {
+                transform: rotate(180deg) translateX(32vh) rotate(-180deg);
+            }
+
+            25% {
+                transform: rotate(270deg) translateX(32vh) rotate(-270deg);
+            }
+
+            50% {
+                transform: rotate(360deg) translateX(32vh) rotate(-360deg);
+            }
+
+            75% {
+                transform: rotate(450deg) translateX(32vh) rotate(-450deg);
+            }
+
+            100% {
+                transform: rotate(540deg) translateX(32vh) rotate(-540deg);
+            }
+        }
+
+        @keyframes moveImage4 {
+            0% {
+                transform: rotate(270deg) translateX(32vh) rotate(-270deg);
+            }
+
+            25% {
+                transform: rotate(360deg) translateX(32vh) rotate(-360deg);
+            }
+
+            50% {
+                transform: rotate(450deg) translateX(32vh) rotate(-450deg);
+            }
+
+            75% {
+                transform: rotate(540deg) translateX(32vh) rotate(-540deg);
+            }
+
+            100% {
+                transform: rotate(630deg) translateX(32vh) rotate(-630deg);
+            }
+        }
+
+        .navbar {
+            background-color: #1B2331;
+            box-shadow: 0px 0px 8px #000;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            max-width: 75rem;
+            margin: auto;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .navbar ul li {
+            float: right;
+        }
+
+        .navbar ul li div {
+            padding: 16px;
+            height: 64px;
+        }
+
+        .navbar ul li div a {
+            font-weight: 900;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .navbar ul li div a:hover {
+            background-color: #111;
+        }
+
+        .navbar ul .active {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div class="name">
+        <ul>
+            <li>
+                <div><a>Pedro Souza</a></div>
+            </li>
+        </ul>
+    </div>
+
+    <section style="scroll-snap-align: start;">
+        <div class="home">
+            <div class="hello"><a>Olá!</a></div>
+            <img src="whiteboard.png" style="animation: moveImage1 30s linear infinite;">
+            <img src="electric-panel.png" style="animation: moveImage2 30s linear infinite;">
+            <img src="arduino.png" style="animation: moveImage3 30s linear infinite;">
+            <img src="code.png" style="animation: moveImage4 30s linear infinite;">
+        </div>
+    </section>
+
+    <div class="navbar">
+        <ul>
+            <li class="main">
+                <div><a>Teste</a></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="home" style="min-height: 300vh;">
+        a
+    </div>
+</body>
+
+</html>
