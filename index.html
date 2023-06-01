@@ -13,9 +13,11 @@
         html {
             scroll-snap-type: y mandatory;
             overflow-x: hidden;
+            overflow-y: scroll;
         }
 
         body {
+            position: absolute;
             font-family: 'Noto Sans';
             font-weight: 700;
             margin: 0px;
@@ -71,16 +73,21 @@
             object-fit: contain;
         }
 
-        .home div {
+        .home div.img-container {
             position: absolute;
-            top: 50vh;
-            left: 50vw;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
         }
 
         .home div img {
             max-height: 32vh;
-            max-width: min(100%, 32vh);
-            margin: -16vh 0 0 -16vh;
+            max-width: 32vh;
         }
 
         .hello {
@@ -236,10 +243,10 @@
 
     <section style="scroll-snap-align: start;">
         <div class="home">
-            <div><img src="whiteboard.png" style="animation: moveImage1 30s linear infinite;"></div>
-            <div><img src="electric-panel.png" style="animation: moveImage2 30s linear infinite;"></div>
-            <div><img src="arduino.png" style="animation: moveImage3 30s linear infinite;"></div>
-            <div><img src="code.png" style="animation: moveImage4 30s linear infinite;"></div>
+            <div class="img-container"><img src="whiteboard.png" style="animation: moveImage1 30s linear infinite;"></div>
+            <div class="img-container"><img src="electric-panel.png" style="animation: moveImage2 30s linear infinite;"></div>
+            <div class="img-container"><img src="arduino.png" style="animation: moveImage3 30s linear infinite;"></div>
+            <div class="img-container"><img src="code.png" style="animation: moveImage4 30s linear infinite;"></div>
             <div class="hello"><a>Olá!</a></div>
         </div>
     </section>
