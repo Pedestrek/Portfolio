@@ -12,6 +12,7 @@
     <style>
         html {
             scroll-snap-type: y mandatory;
+            overflow-x: hidden;
         }
 
         body {
@@ -21,7 +22,6 @@
             color: #EDF0F4;
             scroll-snap-type: y proximity;
             width: 100vw;
-            white-space: nowrap;
         }
 
         .name {
@@ -71,19 +71,22 @@
             object-fit: contain;
         }
 
-        .home img {
-            max-height: 32vh;
-            max-width: 32vh;
-            position: fixed;
+        .home div {
+            position: absolute;
             top: 50vh;
             left: 50vw;
+        }
+
+        .home div img {
+            max-height: 32vh;
+            max-width: min(100%, 32vh);
             margin: -16vh 0 0 -16vh;
         }
 
         .hello {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50vh;
+            left: 50vw;
             transform: translate(-50%, -50%);
             font-size: 128px;
             font-weight: 900;
@@ -233,10 +236,10 @@
 
     <section style="scroll-snap-align: start;">
         <div class="home">
-            <div style="overflow-x: hidden;"><img src="whiteboard.png" style="animation: moveImage1 30s linear infinite;"></div>
-            <img src="electric-panel.png" style="animation: moveImage2 30s linear infinite;">
-            <img src="arduino.png" style="animation: moveImage3 30s linear infinite;">
-            <img src="code.png" style="animation: moveImage4 30s linear infinite;">
+            <div><img src="whiteboard.png" style="animation: moveImage1 30s linear infinite;"></div>
+            <div><img src="electric-panel.png" style="animation: moveImage2 30s linear infinite;"></div>
+            <div><img src="arduino.png" style="animation: moveImage3 30s linear infinite;"></div>
+            <div><img src="code.png" style="animation: moveImage4 30s linear infinite;"></div>
             <div class="hello"><a>Olá!</a></div>
         </div>
     </section>
