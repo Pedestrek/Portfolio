@@ -2,46 +2,6 @@
 <html lang="pt-BR">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- AIzaSyA6Xqhi5xVgrvX2NmXd-PxHEeB-XKnczfM -->
-<script>
-    function initMap() {
-        const center = { lat: -25.2017541, lng: -51.0759644 }
-        const pins = [ { name: "Scenarium" ,          pos: { lat: -20.456810 , lng: -54.581170 }} ,
-                       { name: "Vitra Joinville" ,    pos: { lat: -26.303040 , lng: -48.852720 }} ,
-                       { name: "Artesano" ,           pos: { lat: -23.330680 , lng: -51.182350 }} ,
-                       { name: "Rodin" ,              pos: { lat: -25.410760 , lng: -49.264640 }} ,
-                       { name: "Epic" ,               pos: { lat: -23.332370 , lng: -51.177210 }} ,
-                       { name: "Harmonie" ,           pos: { lat: -22.904263 , lng: -47.046573 }} ,
-                       { name: "Quintessence" ,       pos: { lat: -25.438705 , lng: -49.286279 }} ,
-                       { name: "Terrazza di Rimini" , pos: { lat: -23.345229 , lng: -51.163634 }} ,
-                       { name: "The Edge" ,           pos: { lat: -23.328369 , lng: -51.180478 }} ,
-                       { name: "Bayma" ,              pos: { lat: -25.438899 , lng: -49.279792 }} ,
-                       { name: "Creatif" ,            pos: { lat: -25.457612 , lng: -49.290003 }} ,
-                       { name: "Helbor Signature" ,   pos: { lat: -26.301483 , lng: -48.853089 }} ,
-                       { name: "Jardim" ,             pos: { lat: -25.409022 , lng: -49.265494 }} ,
-                       { name: "Luna" ,               pos: { lat: -25.411629 , lng: -49.253772 }} ,
-                       { name: "Elysia" ,             pos: { lat: -25.437212 , lng: -49.270461 }} ,
-                       { name: "Verttice" ,           pos: { lat: -25.380156 , lng: -49.226862 }} ,
-                       { name: "BOS" ,                pos: { lat: -25.433435 , lng: -49.269167 }} ,
-                       { name: "Chateau Lateur" ,     pos: { lat: -25.452826 , lng: -49.296780 }} ,
-                       { name: "JTI" ,                pos: { lat: -29.749825 , lng: -52.427360 }}
-                     ]
-        const map = new google.maps.Map(document.getElementById("map"), {
-            mapId: "a0283780b97aaccf",
-            zoom: 6.25,
-            center: center,
-        });
-
-        pins.forEach(pin => {
-            const marker = new google.maps.Marker({
-                position: pin.pos,
-                map: map,
-            });
-        });
-        
-    }
-
-    window.initMap = initMap;
-</script>
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,10 +9,71 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="map-script.js"></script> -->
+    <script>
+        function initMap() {
+            const center = { lat: -25.2017541, lng: -51.0759644 }
+            const pins = [{ name: "Scenarium", pos: { lat: -20.456810, lng: -54.581170 } },
+            { name: "Vitra Joinville", pos: { lat: -26.303040, lng: -48.852720 } },
+            { name: "Artesano", pos: { lat: -23.330680, lng: -51.182350 } },
+            { name: "Rodin", pos: { lat: -25.410760, lng: -49.264640 } },
+            { name: "Epic", pos: { lat: -23.332370, lng: -51.177210 } },
+            { name: "Harmonie", pos: { lat: -22.904263, lng: -47.046573 } },
+            { name: "Quintessence", pos: { lat: -25.438705, lng: -49.286279 } },
+            { name: "Terrazza di Rimini", pos: { lat: -23.345229, lng: -51.163634 } },
+            { name: "The Edge", pos: { lat: -23.328369, lng: -51.180478 } },
+            { name: "Bayma", pos: { lat: -25.438899, lng: -49.279792 } },
+            { name: "Creatif", pos: { lat: -25.457612, lng: -49.290003 } },
+            { name: "Helbor Signature", pos: { lat: -26.301483, lng: -48.853089 } },
+            { name: "Jardim", pos: { lat: -25.409022, lng: -49.265494 } },
+            { name: "Luna", pos: { lat: -25.411629, lng: -49.253772 } },
+            { name: "Elysia", pos: { lat: -25.437212, lng: -49.270461 } },
+            { name: "Verttice", pos: { lat: -25.380156, lng: -49.226862 } },
+            { name: "BOS", pos: { lat: -25.433435, lng: -49.269167 } },
+            { name: "Chateau Lateur", pos: { lat: -25.452826, lng: -49.296780 } },
+            { name: "JTI", pos: { lat: -29.749825, lng: -52.427360 } }
+            ]
+            const map = new google.maps.Map(document.getElementById("map"), {
+                mapId: "a0283780b97aaccf",
+                zoom: 6.25,
+                center: center,
+            });
 
+            pins.forEach(pin => {
+                const marker = new google.maps.Marker({
+                    position: pin.pos,
+                    map: map,
+                });
+            });
+
+        }
+
+        window.initMap = initMap;
+    </script>
+    <script>
+        // Detect scroll event
+        window.addEventListener('scroll', function () {
+            // Get the current scroll position
+            var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            var vh = window.innerHeightç
+
+            // Compare the scroll position with the desired point
+            if (scrollPosition < vh) {
+
+            } else if (scrollPosition < 2 * vh) {
+
+            } else if (scrollPosition < 3 * vh) {
+
+            } else {
+
+            }
+        });
+    </script>
     <style>
         html {
             /* scroll-snap-type: y mandatory; */
+            scroll-behavior: smooth;
             overflow-x: hidden;
             overflow-y: scroll;
             scroll-snap-type: y mandatory;
@@ -61,7 +82,7 @@
         body {
             position: absolute;
             font-family: 'Noto Sans';
-            font-weight: 700;
+            font-weight: bold;
             margin: 0px;
             color: #EDF0F4;
             width: 100vw;
@@ -69,42 +90,29 @@
 
         .name {
             position: fixed;
-            width: 100%;
-            max-width: 100vw;
-            z-index: 1;
+            z-index: 2;
+            height: 72px;
+            cursor: pointer;
         }
 
-        .name ul {
-            list-style-type: none;
-            max-width: 75rem;
-            margin: auto;
-            padding-inline-start: min(6vw, 40px);
+        .name div {
+            margin: 8.5px min(1vw, 16px);
         }
 
-        .name ul li {
-            float: left;
-        }
-
-        .name ul li div {
-            padding: 16px min(1vw, 16px);
-            height: 64px;
-            max-height: 64px;
-        }
-
-        .name ul li div a {
+        .name div a {
             font-weight: 900;
-            font-size: min(7vw, 32px);
+            font-size: min(7vw, 40px);
             display: block;
             text-align: center;
             text-decoration: none;
         }
 
-        .name ul li div a:hover {
-            background-color: #111;
+        .name div a:link {
+            color: inherit;
         }
 
-        .name ul .active {
-            background-color: #4CAF50;
+        .name div a:visited {
+            color: inherit;
         }
 
         .home {
@@ -120,7 +128,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            display: flex;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
@@ -235,39 +243,189 @@
             position: -webkit-sticky;
             position: sticky;
             top: 0;
+            z-index: 1;
+            width: 100vw;
         }
 
         .navbar ul {
             list-style-type: none;
-            max-width: 75rem;
-            margin: auto;
-            padding: 0;
+            /* max-width: 75rem; */
+            /* margin: auto; */
+            margin: 0px 16px;
             overflow: hidden;
         }
 
         .navbar ul li {
             float: right;
+            display: inline-flex;
         }
 
         .navbar ul li div {
+            /* margin: 12px; */
             padding: 16px;
-            height: 64px;
+            height: 40px;
+            display: inline-flex;
+            /* border-radius: 12px; */
+        }
+
+        .navbar ul li div:hover {
+            background-color: #2E3C55;
+            /* box-shadow: 0px 0px 8px #2E3C55; */
+        }
+
+        .navbar ul li div img {
+            height: 40px;
         }
 
         .navbar ul li div a {
             font-weight: 900;
             display: block;
-            color: white;
             text-align: center;
             text-decoration: none;
-        }
-
-        .navbar ul li div a:hover {
-            background-color: #111;
+            margin-left: 16px;
+            margin: auto 0px auto 16px;
+            font-size: 24px;
+            color: #D0E1F9;
         }
 
         .navbar ul .active {
             background-color: #4CAF50;
+        }
+
+        .section {
+            background-color: #283655;
+            min-height: 100vh;
+            scroll-snap-align: start;
+            object-fit: contain;
+        }
+
+        .section .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 75rem;
+            margin: auto;
+            padding: 0px 16px;
+        }
+
+        .half-scroll {
+            width: 50%;
+            height: 100vh;
+            scroll-behavior: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            scroll-snap-type: y mandatory;
+            scrollbar-width: none;
+        }
+
+        .select-info {
+            position: -webkit-sticky;
+            position: sticky;
+            list-style-type: none;
+            padding: 16px 0px;
+            margin: 72px 0px 0px 0px;
+        }
+
+        .select-info div {
+            margin-bottom: 24px;
+        }
+
+        .select-info h1 {
+            font-size: 32px;
+            margin: 0px;
+        }
+
+        .select-info a {
+            line-height: 32px;
+            font-size: 24px;
+            color: #EDF0F4;
+            text-shadow: 0px 0px 0px #000;
+            text-decoration: none;
+        }
+
+        @keyframes info-hover {
+            0% {
+                font-size: 24px;
+                line-height: 32px;
+                text-shadow: 0px 0px 0px #000;
+                font-weight: bold;
+            }
+
+            100% {
+                font-size: 25px;
+                line-height: 32px;
+                text-shadow: 0px 0px 32px #000;
+                font-weight: 750;
+            }
+        }
+
+        .select-info a:hover {
+            animation: info-hover 70ms ease-in normal;
+            font-size: 25px;
+            line-height: 32px;
+            text-shadow: 0px 0px 32px #000;
+            font-weight: 750;
+        }
+
+        .select-info .contact {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 8px 0px 0px;
+            gap: 16px;
+            width: 281.72px;
+        }
+
+        .select-info .contact img {
+            margin: 4px;
+            height: 40px;
+        }
+
+        @keyframes info-img-hover {
+            0% {
+                margin: 4px;
+                height: 40px;
+            }
+
+            100% {
+                margin: 0px;
+                height: 48px;
+            }
+        }
+
+        .select-info .contact img:hover {
+            animation: info-img-hover 70ms ease-in normal;
+            margin: 0px;
+            height: 48px;
+        }
+
+        .info {
+            height: 100vh;
+            padding-top: 88px;
+            scroll-snap-align: start; 
+        }
+
+        .info h1 {
+            font-size: 32px;
+            margin: 0px;
+        }
+        
+        .info h2 {
+            line-height: 32px;
+            font-size: 24px;
+            color: #EDF0F4;
+            text-shadow: 0px 0px 0px #000;
+        }
+
+        .info .info-date {
+            line-height: 24px;
+            font-size: 20px;
+            color: #D0E1F9;
+        }
+
+        .info a {
+            line-height: 24px;
+            font-size: 20px;
+            color: #EDF0F4;
         }
 
         .map-container {
@@ -285,14 +443,10 @@
 
 <body>
     <div class="name">
-        <ul>
-            <li>
-                <div><a>Pedro Souza</a></div>
-            </li>
-        </ul>
+        <div><a href="#home">Pedro Souza</a></div>
     </div>
 
-    <section style="scroll-snap-align: start;">
+    <section style="scroll-snap-align: start;" id="home">
         <div class="home">
             <div class="img-container"><img src="whiteboard.png" style="animation: moveImage1 30s linear infinite;">
             </div>
@@ -307,16 +461,198 @@
     <div class="navbar">
         <ul>
             <li class="main">
-                <div><a>Teste</a></div>
+                <div><img src="resume.png"><a href="#resume">Currículo</a></div>
+                <div><img src="portfolio.png"><a href="#portfolio">Portfólio</a></div>
+                <div><img src="languages.png"></div>
             </li>
         </ul>
     </div>
+    <div class="section" id="resume">
+        <div class="container">
+            <div class="half-scroll">
+                <ul class="select-info">
+                    <div>
+                        <li>
+                            <h1>Formação</h1>
+                        </li>
+                        <li>
+                            <a href="#info-electronics">Engenharia Eletrônica</a>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <h1>Experiências</h1>
+                        </li>
+                        <li>
+                            <a href="#info-storge">Storge Engenharia</a>
+                        </li>
+                        <li>
+                            <a href="#info-utfpr">UTFPR</a>
+                        </li>
+                        <li>
+                            <a>JUMPER!</a>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <h1>Projetos</h1>
+                        </li>
+                        <li>
+                            <a>Relampinhão</a>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <h1>Competências</h1>
+                        </li>
+                        <li>
+                            <a>Pacote Office</a>
+                        </li>
+                        <li>
+                            <a>Programação</a>
+                        </li>
+                        <li>
+                            <a>Desenho</a>
+                        </li>
+                        <li>
+                            <a>Idiomas</a>
+                        </li>
+                    </div>
+                    <li>
+                        <h1>Contato</h1>
+                    </li>
+                    <li class="contact">
+                        <img src="whatsapp.png">
+                        <img src="email.png">
+                        <img src="linkedin.png">
+                        <img src="github.png">
+                        <img src="map.png">
+                    </li>
+                </ul>
+            </div>
+            <div class="half-scroll">
+                <div class="info" id="info-none"></div>
+                <div class="info" id="info-electronics">
+                    <h1>
+                        Engenharia Eletrônica <img src="UTFPR.svg"  style="height: 1.5em; margin-left: 1em; display: inline; vertical-align:middle;">
+                    </h1>
+                    <h2>
+                        UTFPR - Curitiba<br>
+                        6º período
+                    </h2>
+                    <a class="info-date">
+                        Desde 2020<br><br> 
+                    </a>
+                    <a>
+                        Áreas de estudo:
+                        <ul>
+                            <li>
+                                Pesquisa e desenvolvimento;
+                            </li><li>
+                                Eletrônica Digital;
+                            </li><li>
+                                Eletrônica Analógica;
+                            </li><li>
+                                Eletrônica de Potência;
+                            </li><li>
+                                Telecomunicações;
+                            </li><li>
+                                Automação Industrial e Controle;
+                            </li><li>
+                                Engenharia de Software e Informática;
+                            </li><li>
+                                Instrumentação;
+                            </li><li>
+                                Controle de Qualidade e Confiabilidade; 
+                            </li><li>
+                                Engenharia Biomédica.
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="info" id="info-storge">
+                    <h1>
+                        Storge Engenharia <img src="Storge.png"  style="height: 1.5em; margin-bottom: -0.5em; float: right;">
+                    </h1>
+                    <h2>
+                        Estagiário<br>
+                    </h2>
+                    <a class="info-date">
+                        Desde Novembro de 2022<br>
+                        Pinhais, Paraná<br><br> 
+                    </a>
+                    <a>
+                        Áreas de atuação:
+                        <ul>
+                            <li>
+                                Projetos de sistemas elétricos
+                            </li><li>
+                                Desenhos em CAD
+                            </li><li>
+                                Levantamento de materiais
+                            </li><li>
+                                Programação de embarcados
+                            </li><li>
+                                Desenvolvimento de produtos
+                            </li>
+                        </ul>
+                        <a href="https://storgeengenharia.com.br/" target=”_blank”>Site da empresa</a>
+                    </a>
+                </div>
+                <div class="info" id="info-storge">
+                    <h1>
+                        Storge Engenharia <img src="Storge.png"  style="height: 1.5em; margin-bottom: -0.5em; float: right;">
+                    </h1>
+                    <h2>
+                        Estagiário<br>
+                    </h2>
+                    <a class="info-date">
+                        Desde Novembro de 2022<br>
+                        Pinhais, Paraná<br><br> 
+                    </a>
+                    <a>
+                        Áreas de atuação:
+                        <ul>
+                            <li>
+                                Projetos de sistemas elétricos
+                            </li><li>
+                                Desenhos em CAD
+                            </li><li>
+                                Levantamento de materiais
+                            </li><li>
+                                Programação de embarcados
+                            </li><li>
+                                Desenvolvimento de produtos
+                            </li>
+                        </ul>
+                        <a href="https://storgeengenharia.com.br/" target=”_blank”>Site da empresa</a>
+                    </a>
+                </div>
+                <div class="info" id="info-utfpr">
+                    <h1>
+                        UTFPR
+                    </h1>
+                    <h2>
+                        Monitor
+                    </h2>
+                    <a>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="home" style="min-height: 300vh;">
-        <div class="map-container"><div id="map"></div>
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Xqhi5xVgrvX2NmXd-PxHEeB-XKnczfM&callback=initMap&v=weekly"
-            defer></script></div>
+
+    <div class="section" id="portfolio">
+        <div class="container">
+            <div class="map-container">
+                <div id="map"></div>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Xqhi5xVgrvX2NmXd-PxHEeB-XKnczfM&callback=initMap&v=weekly"
+                    defer></script>
+            </div>
+        </div>
     </div>
 </body>
 
